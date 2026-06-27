@@ -1,0 +1,40 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group android:scaleX="0.6"
+           android:scaleY="0.6"
+           android:translateX="21.6"
+           android:translateY="21.6">
+        <!-- Calculator body -->
+        <rect
+            android:width="90"
+            android:height="110"
+            android:x="9"
+            android:y="5"
+            android:fillColor="#FFB300"/>
+        <!-- Display -->
+        <rect
+            android:width="70"
+            android:height="22"
+            android:x="19"
+            android:y="15"
+            android:fillColor="#121212"/>
+        <!-- Buttons rows -->
+        <rect android:width="14" android:height="14" android:x="20" android:y="48" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="38" android:y="48" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="56" android:y="48" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="74" android:y="48" android:fillColor="#FF8C00"/>
+
+        <rect android:width="14" android:height="14" android:x="20" android:y="68" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="38" android:y="68" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="56" android:y="68" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="74" android:y="68" android:fillColor="#FF8C00"/>
+
+        <rect android:width="14" android:height="14" android:x="20" android:y="88" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="38" android:y="88" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="56" android:y="88" android:fillColor="#333333"/>
+        <rect android:width="14" android:height="14" android:x="74" android:y="88" android:fillColor="#4CAF50"/>
+    </group>
+</vector>
