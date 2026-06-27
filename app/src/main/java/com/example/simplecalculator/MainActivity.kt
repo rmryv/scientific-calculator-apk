@@ -49,7 +49,7 @@ fun CalculatorScreen() {
         return if (abs(value - value.toLong()) < 1e-10) {
             value.toLong().toString()
         } else {
-            val s = "%.10f".format(value).trimEnd('0').trimEnd('.')
+            val s = String.format("%.10f", value).trimEnd('0').trimEnd('.')
             if (s.length > 12) {
                 String.format("%.6e", value)
             } else s
