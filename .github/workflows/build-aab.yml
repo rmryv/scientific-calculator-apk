@@ -24,8 +24,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
+      - name: Make gradlew executable (for local use)
+        run: chmod +x ./gradlew || true
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -64,10 +64,10 @@ jobs:
 
       - name: Build Release AAB (when secrets available)
         if: github.event.inputs.build_type != 'debug'
-        run: ./gradlew bundleRelease --stacktrace || echo "Release build skipped (no keystore secrets configured yet)"
+        run: gradle bundleRelease --stacktrace || echo "Release build skipped (no keystore secrets configured yet)"
 
       - name: Build Debug APK (perfect for emulator / simulator testing)
-        run: ./gradlew assembleDebug --stacktrace
+        run: gradle assembleDebug --stacktrace
 
       - name: Upload Debug APK (for simulator)
         uses: actions/upload-artifact@v4
