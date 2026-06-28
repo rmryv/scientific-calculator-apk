@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -10,7 +12,7 @@ android {
 
     // Load signing properties if present (used by GitHub Actions and local release builds)
     val keystorePropertiesFile = rootProject.file("keystore.properties")
-    val keystoreProperties = java.util.Properties()
+    val keystoreProperties = Properties()
     if (keystorePropertiesFile.exists()) {
         keystoreProperties.load(keystorePropertiesFile.inputStream())
     }
