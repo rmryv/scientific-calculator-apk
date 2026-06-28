@@ -41,6 +41,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Generate Gradle wrapper jar (ensures ./gradlew works)
+        run: gradle wrapper --gradle-version 8.10.2 --quiet || true
+
       - name: Decode Keystore (for release builds)
         if: github.event.inputs.build_type != 'debug'
         env:
@@ -64,10 +67,10 @@ jobs:
 
       - name: Build Release AAB (when secrets available)
         if: github.event.inputs.build_type != 'debug'
-        run: gradle bundleRelease --stacktrace || echo "Release build skipped (no keystore secrets configured yet)"
+        run: ./gradlew bundleRelease --stacktrace || echo "Release build skipped (no keystore secrets configured yet)"
 
       - name: Build Debug APK (perfect for emulator / simulator testing)
-        run: gradle assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --stacktrace
 
       - name: Upload Debug APK (for simulator)
         uses: actions/upload-artifact@v4
